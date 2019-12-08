@@ -8,7 +8,7 @@ const Footer = () => {
       
       <div className="footer-copyright text-center py-3">
         <MDBContainer fluid>
-          &copy; {new Date().getFullYear()} Copyright: <a href="https://www.MDBootstrap.com"> ChrisBG69 </a>
+          &copy; {new Date().getFullYear()} Copyright: <a href="https://github.com/chrisbg69/SoftUni-Blogger"> ChrisBG69 </a>
         </MDBContainer>
       </div>
     </MDBFooter>
