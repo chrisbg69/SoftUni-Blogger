@@ -350,6 +350,19 @@ button {
   text-align: center;
 }
 
+/*Contact Page*/
+
+.write-to-us {
+  color: #fff;
+  text-align: center;
+}
+
+.under-header-text {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+
 /* Profiles Page */
 .profile {
   display: grid;
