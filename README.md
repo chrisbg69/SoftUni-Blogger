@@ -1,6 +1,6 @@
 [![HitCount](http://hits.dwyl.io/{chrisbg69}/{SoftUni-Blogger}.svg)](http://hits.dwyl.io/{chrisbg69}/{SoftUni-Blogger})
 ![GitHub language count](https://img.shields.io/github/languages/count/chrisbg69/SoftUni-Blogger)
-https://img.shields.io/github/languages/top/chrisbg69/SoftUni-Blogger
+![GitHub top language](https://img.shields.io/github/languages/top/chrisbg69/SoftUni-Blogger)
 # SoftUni Blogger
 
 > This project uses the following technologies:
