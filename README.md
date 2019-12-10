@@ -1,3 +1,5 @@
+[![HitCount](http://hits.dwyl.io/{chrisbg69}/{SoftUni-Blogger}.svg)](http://hits.dwyl.io/{chrisbg69}/{SoftUni-Blogger})
+
 # SoftUni Blogger
 
 > This project uses the following technologies:
