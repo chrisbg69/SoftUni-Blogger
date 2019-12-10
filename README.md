@@ -47,6 +47,3 @@ npm run build
 ## App Info
 
 
-### License
-
-This project is licensed under the MIT License
