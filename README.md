@@ -18,7 +18,10 @@ It is a small blog app that includes authentication, profiles and forum posts.
 
 # add uri of your mongodb connection for example
 
- "mongoURI": "mongodb://localhost/dev-social",
+ "mongoURI": "mongodb://localhost/dev-social"
+
+# Note:
+    I will leave the database configured for ease of checking, then it will be deleted.
  
 ```
 
