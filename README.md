@@ -1,4 +1,5 @@
 [![HitCount](http://hits.dwyl.io/{chrisbg69}/{SoftUni-Blogger}.svg)](http://hits.dwyl.io/{chrisbg69}/{SoftUni-Blogger})
+![GitHub language count](https://img.shields.io/github/languages/count/chrisbg69/SoftUni-Blogger)
 
 # SoftUni Blogger
 
