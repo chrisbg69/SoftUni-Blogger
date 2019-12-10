@@ -54,8 +54,8 @@ const Carousel = () => {
           <MDBMask overlay="black-slight" />
           </MDBView>
           <MDBCarouselCaption>
-            <h3 className="h3-responsive">Slight Mast</h3>
-            <p>Third text</p>
+            <h3 className="h3-responsive">We develop future</h3>
+            <p>Join us and step towards the digital world</p>
           </MDBCarouselCaption>
         </MDBCarouselItem>
       </MDBCarouselInner>

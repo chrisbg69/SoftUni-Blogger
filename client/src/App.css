@@ -362,6 +362,9 @@ button {
   text-align: center;
 }
 
+.radius {
+  border-radius: 50%
+}
 
 /* Profiles Page */
 .profile {

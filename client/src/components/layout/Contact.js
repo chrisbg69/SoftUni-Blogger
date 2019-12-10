@@ -8,6 +8,7 @@ import 'toastr/build/toastr.min.css';
 
 class ContactPage extends Component {
 
+  
     constructor (props) {        
         super(props)
 
@@ -97,7 +98,7 @@ class ContactPage extends Component {
             .then(function(response){
               toastr.options = {
                 positionClass : 'toast-top-full-width',
-                timeOut: 9000
+                timeOut: 4500
               }
                 toastr.success('Message sent successful!');
                 console.log('SUCCESS!', response.status, response.text);
@@ -113,8 +114,11 @@ class ContactPage extends Component {
                 subject: '',
                 message: ''
             });
+
+           
     }
 
+   
 render () {
   return (
     <section className="my-5">
@@ -122,9 +126,7 @@ render () {
         Contact us
       </h2>
       <p className="text-center w-responsive mx-auto pb-5">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit,
-        error amet numquam iure provident voluptate esse quasi, veritatis
-        totam voluptas nostrum quisquam eum porro a pariatur veniam.
+      Creativity bleeds from the pen of inspiration.
       </p>
       <MDBRow>
         <MDBCol lg="5" className="lg-0 mb-4">
@@ -237,21 +239,21 @@ render () {
           <br />
           <MDBRow className="text-center">
             <MDBCol md="4">
-              <MDBBtn tag="a" floating color="blue" className="accent-1">
+              <MDBBtn tag="a" floating color="blue" className="accent-1 mb-3 radius">
                 <MDBIcon icon="map-marker-alt" />
               </MDBBtn>
               <p className="mb-md-0">Sofia, 1324</p>
               <p className="mb-md-0">Bulgaria</p>
             </MDBCol>
             <MDBCol md="4">
-              <MDBBtn tag="a" floating color="blue" className="accent-1">
+              <MDBBtn tag="a" floating color="blue" className="accent-1 mb-3 radius">
                 <MDBIcon icon="phone" />
               </MDBBtn>
               <p className="mb-md-0">+359 878 715 210</p>
               <p className="mb-md-0">Mon-Fri, 9:30-18:30</p>
             </MDBCol>
             <MDBCol md="4">
-              <MDBBtn tag="a" floating color="blue" className="accent-1">
+              <MDBBtn tag="a" floating color="blue" className="accent-1 mb-3 radius">
                 <MDBIcon icon="envelope" />
               </MDBBtn>
               <p className="mb-md-0">info@gmail.com</p>
