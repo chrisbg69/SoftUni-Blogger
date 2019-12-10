@@ -44,6 +44,10 @@ img {
   margin-bottom: 3rem;
 }
 
+.con-1 {
+  margin-bottom: 7rem;
+}
+
 /* Text Styles*/
 .x-large {
   font-size: 4rem;
@@ -352,9 +356,14 @@ button {
 
 /*Contact Page*/
 
+
+.hedar {
+  border-radius: 3px;
+}
+
 .write-to-us {
   color: #fff;
-  text-align: center;
+  text-align: center;  
 }
 
 .under-header-text {
@@ -450,24 +459,6 @@ button {
 .profile-exp p,
 .profile-edu p {
   margin: 0.5rem 0;
-}
-
-.profile-github {
-  grid-area: github;
-}
-
-.profile-github .repo {
-  display: flex;
-}
-
-.profile-github .repo > div:first-child {
-  flex: 7;
-  flex-basis: 70%;
-}
-
-.profile-github > div:last-child {
-  flex: 3;
-  flex-basis: 20%;
 }
 
 /* Posts Page */

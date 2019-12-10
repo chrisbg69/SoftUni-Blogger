@@ -139,7 +139,7 @@ render () {
                   method={this.props.method}
                   action={this.props.action}
                  >
-              <div className="form-header blue ">
+              <div className="form-header blue hedar">
                 <h3 className="mt-2 write-to-us" >
                   <MDBIcon icon="envelope" /> Write to us:
                 </h3>
