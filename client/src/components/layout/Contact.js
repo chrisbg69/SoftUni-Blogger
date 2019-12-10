@@ -32,6 +32,7 @@ class ContactPage extends Component {
         const value = target.value;
 
         this.setState({[name]: value});
+        
     }
 
     validateMail() {
@@ -66,8 +67,11 @@ class ContactPage extends Component {
         }
 
         this.setState({
+          
             errors: errors
+           
         });
+       
 
         return formIsValid;        
         
