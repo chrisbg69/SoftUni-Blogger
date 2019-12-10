@@ -27,7 +27,6 @@ It is a small blog app that includes authentication, profiles and forum posts.
 ```
 > Note:
    > I will leave the database configured for ease of checking, then it will be deleted.
-> Заб. Ще оставя базата конфигурирана за удобство на проверяващите, след това ще бъде изтрита. :)
 
 ```bash
 # Install server dependencies
