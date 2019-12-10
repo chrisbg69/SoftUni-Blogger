@@ -16,9 +16,9 @@ It is a small blog app that includes authentication, profiles and forum posts.
 
 # this file is located in config/default.json
 
-# add uri of your mongodb connection for example
+# add uri of your mongodb connection for example:
 
- "mongoURI": "mongodb://localhost/dev-social"
+ "mongoURI": "mongodb+srv://<your_username>:<your_password>@react-blog-cdxcu.mongodb.net/test?retryWrites=true&w=majority"
 
 # Note:
     I will leave the database configured for ease of checking, then it will be deleted.
