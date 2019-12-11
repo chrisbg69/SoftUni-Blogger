@@ -16,15 +16,10 @@ class ContactPage extends Component {
             name: '',
             email: '',
             subject: '',
-            message: '',
-            errors: {
-                name: '',
-                email: '',
-                subject: '',
-                message: ''
+            message: ''            
             }
         }
-    }
+    
 
     handleInputChange (event) {
         event.preventDefault()
@@ -35,56 +30,12 @@ class ContactPage extends Component {
         this.setState({[name]: value});
         
     }
-
-    validateMail() {
-        let errors = {};
-        let formIsValid = true;
-
-        if (this.state.name || this.state.name.length < 3) {
-            errors.name = 'Minimum 3 symbols is required!';
-            formIsValid = false;
-        }
-
-        if (!this.state.subject || this.state.subject.length < 3) {
-            errors.subject = 'Minimum 3 symbols is required!';
-            formIsValid = false;
-        }
-
-        if (!this.state.message || this.state.message.length < 3) {
-            errors.message = 'Minimum 10 symbols is required!';
-            formIsValid = false;
-        }
-
-        if (!this.state.email || this.state.email.length < 3) {
-            errors.email = 'Minimum 3 symbols is required!';
-            formIsValid = false;
-        }
-
-        let pattern = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-
-        if (!pattern.test(this.state.email)) {
-            errors.mail = 'This is not a valid email!';
-            formIsValid = false;
-        }
-
-        this.setState({
-          
-            errors: errors
-           
-        });
-       
-
-        return formIsValid;        
-        
-    }
+    
 
     sentMessage (event) {
         event.preventDefault();
 
-        if (!this.validateMail()) {
-            return;            
-        }
-
+       
         let templateParams = {
             from_name: this.state.name + '(' + this.state.email + ')',
             to_name: 'archangelbg.warmaster@gmail.com',
@@ -157,7 +108,7 @@ render () {
                   className='form-control'
                   required='required' onChange={this.handleInputChange.bind(this)}
                   value={this.state.name}
-                  error={this.state.errors.name}
+                  
                   id="form-name"
                 />
               </div>
@@ -172,7 +123,7 @@ render () {
                   required='required' 
                   onChange={this.handleInputChange.bind(this)}
                   value={this.state.email}
-                  error={this.state.errors.email}
+                  
                   id="form-email"
                   
                 />
@@ -188,7 +139,7 @@ render () {
                   required='required' 
                   onChange={this.handleInputChange.bind(this)}
                   value={this.state.subject}
-                  error={this.state.errors.subject}
+                  
                   id="form-subject"                  
                 />
               </div>
@@ -204,7 +155,7 @@ render () {
                   required='required' 
                   onChange={this.handleInputChange.bind(this)}
                   value={this.state.message}
-                  error={this.state.errors.message}
+                  
                   
                 />
               </div>
