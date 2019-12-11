@@ -2,7 +2,7 @@
 ![GitHub language count](https://img.shields.io/github/languages/count/chrisbg69/SoftUni-Blogger)
 ![GitHub top language](https://img.shields.io/github/languages/top/chrisbg69/SoftUni-Blogger)
 ![GitHub repo size](https://img.shields.io/github/repo-size/chrisbg69/SoftUni-Blogger)
-![Custom badge](https://img.shields.io/endpoint?color=green&label=website&url=https%3A%2F%2Fimg.shields.io%2Fbadge%2Fwebsite-https%253A%252F%252Fsoftuni--blogger.herokuapp.com-green)
+[![website: https://github.com/chrisbg69/SoftUni-Blogger](https://img.shields.io/badge/website-https%3A%2F%2Fsoftuni--blogger.herokuapp.com-green.svg)](https://github.com/chrisbg69/SoftUni-Blogger)
 
 # SoftUni Blogger
 
