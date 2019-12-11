@@ -45,8 +45,9 @@ npm run build
 ```
 
 ## App Info
-```
+```bash
 # Live version of the app:
-[https://softuni-blogger.herokuapp.com](https://softuni-blogger.herokuapp.com)
 ```
+[https://softuni-blogger.herokuapp.com](https://softuni-blogger.herokuapp.com)
+
 
