@@ -1,49 +1,40 @@
 import React, { Component } from "react";
 import { MDBRow, MDBCol, MDBCard, MDBCardBody, MDBIcon, MDBBtn, MDBInput } from "mdbreact";
 import * as emailjs from 'emailjs-com';
+import * as EmailValidator from 'email-validator';
 import toastr from 'toastr';
 import 'toastr/build/toastr.min.css';
 
 
+const initialState = {
+  name: '',
+  email: '',
+  subject: '',
+  message: '',
+  nameError: '',
+  emailError: '',
+  subjectError: '',
+  mesError: ''
+};
 
 class ContactPage extends Component {
-
+  state = initialState;
   
-    constructor (props) {        
-        super(props)
-
-        this.state = {
-            name: '',
-            email: '',
-            subject: '',
-            message: ''            
-            }
-        }
+  handleSubmit(e) {
+    e.preventDefault();
+    const { name, email, subject, message } = this.state;
+    let isValid = this.validateForm();
     
-
-    handleInputChange (event) {
-        event.preventDefault()
-        const target = event.target;
-        const name = target.name;
-        const value = target.value;
-
-        this.setState({[name]: value});
-        
-    }
-    
-
-    sentMessage (event) {
-        event.preventDefault();
-
-       
-        let templateParams = {
-            from_name: this.state.name + '(' + this.state.email + ')',
-            to_name: 'archangelbg.warmaster@gmail.com',
-            subject: this.state.subject,
-            message_html: this.state.message
-        };
-
-        
+    if (isValid) {
+      let templateParams = {
+        name: name,
+        from_name: this.state.name + '(' + this.state.email + ')',
+        to_name: 'archangelbg.warmaster@gmail.com',
+        subject: this.state.subject,
+        message_html: this.state.message
+      };
+      
+      
         
         emailjs.send('gmail', 'template_NwbHuWWX', templateParams, 'user_FDArPN2GTq25s7zF5CWaX')
             .then(function(response){
@@ -68,6 +59,45 @@ class ContactPage extends Component {
 
            
     }
+  }
+
+  validateForm() {
+    let nError = '';
+    let sError = '';
+    let eError = '';
+    let mError = '';
+    if (this.state.name === '' || this.state.name.length < 3) {
+      nError = 'Minimum 3 symbols is required!';
+    }
+
+    if (!EmailValidator.validate(this.state.email)) {
+      eError = 'Please enter a valid email';
+    }
+
+    if (this.state.subject === '' || this.state.subject.length < 3) {
+      sError = 'Minimum 3 symbols is required!';
+    }
+
+    if (this.state.message === '' || this.state.message.length < 10) {
+      mError = 'Minimum 10 symbols is required!';
+    }
+
+    if (nError || sError || eError || mError) {
+      this.setState({
+        nameError: nError,
+        subjectError: sError,
+        emailError: eError,
+        mesError: mError
+      });
+      return false;
+    }
+
+    return true;
+  }
+
+  handleChange = (param, e) => {
+    this.setState({ [param]: e.target.value });
+  };
 
    
 render () {
@@ -84,11 +114,7 @@ render () {
           <MDBCard>
             <MDBCardBody>
                 <form
-                  id={this.props.id}
-                  className={this.props.className}
-                  name={this.props.name}
-                  method={this.props.method}
-                  action={this.props.action}
+                  onSubmit={this.handleSubmit.bind(this)}
                  >
               <div className="form-header blue hedar">
                 <h3 className="mt-2 write-to-us" >
@@ -106,11 +132,15 @@ render () {
                   type="text"
                   name='name'
                   className='form-control'
-                  required='required' onChange={this.handleInputChange.bind(this)}
-                  value={this.state.name}
-                  
-                  id="form-name"
+                  required='required' onChange={this.handleChange.bind(this, 'name')}
+                  value={this.state.name}                  
+                  id="form-name"                  
                 />
+                {this.state.nameError ? (
+                    <div style={{ color: 'red', fontWeight: 'lighter' }}>
+                      {this.state.nameError}
+                    </div>
+                  ) : null}
               </div>
               <div className="md-form">
                 <MDBInput
@@ -121,12 +151,15 @@ render () {
                   name='email'
                   className='form-control'
                   required='required' 
-                  onChange={this.handleInputChange.bind(this)}
-                  value={this.state.email}
-                  
-                  id="form-email"
-                  
+                  onChange={this.handleChange.bind(this, 'email')}
+                  value={this.state.email}                  
+                  id="form-email"                  
                 />
+                {this.state.emailError ? (
+                      <div style={{ color: 'red', fontWeight: 'lighter' }}>
+                        {this.state.emailError}
+                      </div>
+                    ) : null}
               </div>
               <div className="md-form">
                 <MDBInput
@@ -137,11 +170,15 @@ render () {
                   name='subject'
                   className='form-control'
                   required='required' 
-                  onChange={this.handleInputChange.bind(this)}
-                  value={this.state.subject}
-                  
+                  onChange={this.handleChange.bind(this, 'subject')}
+                  value={this.state.subject}                  
                   id="form-subject"                  
                 />
+                {this.state.subjectError ? (
+                      <div style={{ color: 'red', fontWeight: 'lighter' }}>
+                        {this.state.subjectError}
+                      </div>
+                    ) : null}
               </div>
               <div className="md-form">
                 <MDBInput
@@ -153,19 +190,24 @@ render () {
                   id='message'
                   className='form-control'
                   required='required' 
-                  onChange={this.handleInputChange.bind(this)}
-                  value={this.state.message}
+                  onChange={this.handleChange.bind(this, 'message')}
+                  value={this.state.message}              
                   
-                  
-                />
+                  />
+                  {this.state.mesError ? (
+                      <div style={{ color: 'red', fontWeight: 'lighter' }}>
+                        {this.state.mesError}
+                      </div>
+                    ) : null}
               </div>
               <div className="text-center">
                 <MDBBtn color="blue"
-                    onClick={this.sentMessage.bind(this)}
-                    type='button'
-                    name='submit'
-                    required='required'
-                 >Submit</MDBBtn>
+                    
+                    type='submit'
+                    
+                 >
+                   {''}
+                   Submit</MDBBtn>
               </div>
               </form>             
               
@@ -190,21 +232,21 @@ render () {
           <br />
           <MDBRow className="text-center">
             <MDBCol md="4">
-              <MDBBtn tag="a" floating color="blue" className="accent-1 mb-3 radius">
+              <MDBBtn tag="a" floating="true" color="blue" className="accent-1 mb-3 radius">
                 <MDBIcon icon="map-marker-alt" />
               </MDBBtn>
               <p className="mb-md-0">Sofia, 1324</p>
               <p className="mb-md-0">Bulgaria</p>
             </MDBCol>
             <MDBCol md="4">
-              <MDBBtn tag="a" floating color="blue" className="accent-1 mb-3 radius">
+              <MDBBtn tag="a" floating="true" color="blue" className="accent-1 mb-3 radius">
                 <MDBIcon icon="phone" />
               </MDBBtn>
               <p className="mb-md-0">+359 878 715 210</p>
               <p className="mb-md-0">Mon-Fri, 9:30-18:30</p>
             </MDBCol>
             <MDBCol md="4">
-              <MDBBtn tag="a" floating color="blue" className="accent-1 mb-3 radius">
+              <MDBBtn tag="a" floating="true" color="blue" className="accent-1 mb-3 radius">
                 <MDBIcon icon="envelope" />
               </MDBBtn>
               <p className="mb-md-0">info@gmail.com</p>
