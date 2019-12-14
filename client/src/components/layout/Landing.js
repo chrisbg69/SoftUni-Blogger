@@ -19,7 +19,7 @@ const Landing = ({ isAuthenticated }) => {
             Create a developer profile/portfolio, share posts and get help from
             other developers
           </p>
-          <div className='buttons-landing'>
+          <div className='buttons'>
             <Link to='/register' className='btn btn-primary'>
               Sign Up
             </Link>
