@@ -242,10 +242,10 @@ img {
 }
 
 .search__title {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 900;
-  text-align: left;
-  color: #ff8b88;
+  text-align: center;
+  color: var(--dark-color);
 }
 
 .search__input {

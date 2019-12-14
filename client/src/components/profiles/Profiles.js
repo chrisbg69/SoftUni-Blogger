@@ -2,6 +2,7 @@ import React, { Fragment, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
+import {  MDBIcon } from "mdbreact";
 import ProfileItem from './ProfileItem';
 import { getProfiles } from '../../actions/profile';
 
@@ -33,7 +34,7 @@ const updateSearch = event =>
             developers
           </p>
           <div className="search__container">
-                    <p className="search__title">
+           <p  className="search__title"><MDBIcon icon="search" className="var(--dark-color) mr-1" />
                         search profiles
                     </p>
              <input type='text' onChange={updateSearch.bind(this)} value={search} className="search__input" placeholder="search profiles" />
