@@ -30,7 +30,7 @@ const updateSearch = event =>
         <Fragment>
           <h1 className='large text-primary'>Developers</h1>
           <p className='lead'>
-            <i className='fab fa-connectdevelop' /> Browse and connect with
+            <i className='fab fa-connectdevelop' /> Browse and connect with SoftUni
             developers
           </p>
           <div className="search__container">
